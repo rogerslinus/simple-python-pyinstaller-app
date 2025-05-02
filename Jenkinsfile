@@ -1,14 +1,13 @@
 pipeline {
-    agent none 
+    agent any
     stages {
-        stage('Build') { 
-            agent {
-                docker {
-                    image 'python:2-alpine' 
-                }
-            }
+        stage('Build') {
             steps {
-                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
         }
     }
