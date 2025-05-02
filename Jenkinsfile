@@ -5,7 +5,7 @@ pipeline {
         stage('build') {
             steps { 
                 sh 'python --version'
-                sh 'ls /var/jenkins_home/workspace/le-python-pyinstaller-app_master'
+                sh 'python /var/jenkins_home/workspace/le-python-pyinstaller-app_master/sources/calc.py'
             }
         }
     }
